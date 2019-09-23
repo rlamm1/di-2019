@@ -18,9 +18,7 @@ function drawWave(y, amplitude, count, phase){
   endShape(CLOSE)
 }
 
-var hrsPhase = 0,
-    minPhase = 0,
-    secPhase = 0;
+var phase = 0
 
 function draw() {
   background(0)
@@ -28,18 +26,16 @@ function draw() {
 
   let now = clock(),
       amp = 50, // the vertical size of the largest wave
-      speed = .08 // the maximum horizontal drift speed
+      speed = .008 // the maximum horizontal drift speed
 
-  hrsPhase += speed * now.progress.day
-  minPhase += speed * now.progress.hour
-  secPhase += speed * now.progress.min
+  phase += speed
 
   fill('red')
-  drawWave(height*.3, amp, 24*now.progress.day, hrsPhase)
+  drawWave(height*.3, amp, 24*now.progress.day, phase/3)
 
   fill('orange')
-  drawWave(height*.5, amp/2, 60*now.progress.hour, minPhase)
+  drawWave(height*.5, amp/2, 60*now.progress.hour, phase/2)
 
   fill('yellow')
-  drawWave(height*.66, amp/4, 60*now.progress.min, secPhase)
+  drawWave(height*.66, amp/4, 60*now.progress.min, phase)
 }

@@ -112,16 +112,17 @@ var TimeKeeper = function(sel){
     addFrame:function({offset=0, step='hours', speed=1.0, now}){
       let links = [...document.querySelectorAll('link')].map(elt => elt.href.indexOf('time-keeper')<0 ? elt.outerHTML : ''),
           sketch = $(`<div class="cell"><div class="timestamp">&nbsp;</div></div>`),
-          nocache = +(now || new Date());
+          nocache = +(now || new Date()),
+          libdir = window.location.pathname.match(/examples/) ? '../../libraries' : '../libraries';
       $('<iframe>').addClass('sketch').attr('srcdoc',`
         <html>
           <head>
             <meta charset="UTF-8">
-            <script language="javascript" type="text/javascript" src="../libraries/p5.min.js"></script>
-            <script language="javascript" type="text/javascript" src="../libraries/lodash.min.js"></script>
-            <script language="javascript" type="text/javascript" src="../libraries/chroma.min.js"></script>
-            <script language="javascript" type="text/javascript" src="../libraries/moment.min.js"></script>
-            <script language="javascript" type="text/javascript" src="../libraries/clock.js"></script>
+            <script language="javascript" type="text/javascript" src="${libdir}/p5.min.js"></script>
+            <script language="javascript" type="text/javascript" src="${libdir}/lodash.min.js"></script>
+            <script language="javascript" type="text/javascript" src="${libdir}/chroma.min.js"></script>
+            <script language="javascript" type="text/javascript" src="${libdir}/moment.min.js"></script>
+            <script language="javascript" type="text/javascript" src="${libdir}/clock.js"></script>
             <script> clockSpeed(${speed}); clockOffset(${offset}, "${step}") </script>
             <script language="javascript" type="text/javascript" src="sketch.js?v=${nocache}"></script>
             ${links.join(' ')}
