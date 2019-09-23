@@ -26,7 +26,7 @@ function draw() {
 
   let now = clock(),
       amp = 50, // the vertical size of the largest wave
-      speed = .008 // the maximum horizontal drift speed
+      speed = .008; // the maximum horizontal drift speed
 
   phase += speed
 
