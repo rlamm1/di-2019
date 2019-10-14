@@ -22,7 +22,7 @@ var phase = 0
 
 function draw() {
   background(0)
-  noStroke()
+  Stroke(1)
 
   let now = clock(),
       amp = 50, // the vertical size of the largest wave

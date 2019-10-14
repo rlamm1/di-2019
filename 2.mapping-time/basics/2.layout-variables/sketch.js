@@ -17,6 +17,7 @@ function setup() {
 
   // draw the leftmost group of four lines
   line(x, y, x+w, y);
+//line (90, 120, 90+180, 120)
   line(x, y+10, x+w, y+10);
   line(x, y+20, x+w, y+20);
   line(x, y+30, x+w, y+30);

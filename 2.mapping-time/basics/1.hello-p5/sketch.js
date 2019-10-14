@@ -11,9 +11,9 @@ function setup() {
   text("Hello P5 👋", 90, height/2) // (message, x, y)
 
   // pick a light grey fill and bright red stroke to draw shapes with
-  fill(200)         // a single value is greyscale
-  stroke(200, 0, 0) // three values are red/green/blue
-  strokeWeight(4)   // line weight in pixels
+  fill(250)         // a single value is greyscale
+  stroke(200, 0, 0,180) // three values are red/green/blue
+  strokeWeight(2)   // line weight in pixels
 
   // draw three shapes
   square(100, 200, 40) // (x, y, size)

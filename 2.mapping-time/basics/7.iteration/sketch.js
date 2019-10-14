@@ -40,7 +40,7 @@ function setup() {
   translate(100, 50)
   fill('red')
   circle(0, 0, radius)
-  circle(0, spacing, radius)
+  circle(0, 1* spacing, radius)
   circle(0, 2*spacing, radius)
   circle(0, 3*spacing, radius)
   circle(0, 4*spacing, radius)
@@ -48,6 +48,10 @@ function setup() {
 
   translate(200, 0)
   fill('orange')
+  
+  // 1. variable = 0
+  // 2. test over and over if i <6
+  // 3. x = x + 1
   for (var i=0; i<6; i++){
     circle(0, i*spacing, radius)
   }

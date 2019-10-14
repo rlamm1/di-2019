@@ -1,5 +1,6 @@
 // the colors we'll be using as 'stops' in our gradient. these can be color names or hex strings (e.g., '#2b7c09')
 // for reference see: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
+//hex strings
 var colors = ['darkred','orange','green','steelblue','darkslategrey']
 
 // the colorForProgress() function takes a 'progress' value between 0.0 and 1.0 and returns a hex string
@@ -24,8 +25,8 @@ function draw() {
 
   // use the current 'doneness' of the current hour to choose the background color from our gradient
   // (note that setting the background also clears the canvas from our previous round of drawing)
-  var color = colorForProgress(now.progress.hour)
-  background(color)
+  var stroke = colorForProgress(now.progress.hour)
+  background(stroke)
 
   // set up typography & drawing-color
   let pointSize = 42

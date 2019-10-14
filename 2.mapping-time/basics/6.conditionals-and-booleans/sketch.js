@@ -21,22 +21,35 @@ function drawShape(x, y){
   if (isLeft){
     fill(0)
   }else{
-    fill(255)
+    fill(255,255,30)
   }
 
   var isUpper = y < height/2 // will be 'false' if y is greater than 200
-  if (isUpper){
+   if (isUpper){
     circle(x, y, 25)
   }else{
     rect(x, y, 25, 25)
   }
 }
+  
+//   if (y<height/3 && radius =100)
+// if(y<height/3){
+// circle(x,y,25)
+// }else if(y <2*height/3){
+//   stroke(0)
+//   line(x-10,y-10,x+10,y+10)
+// }else{
+//   rect(x,y,25,25)
+
+// }
+// }
+ 
 
 
 // try adjusting these starting positions and notice how the block of shapes
 // changes based on where each individual shape is positioned
 var horiz = 200
-var vert = 50
+var vert = 10
 
 function draw(){
   background(127)

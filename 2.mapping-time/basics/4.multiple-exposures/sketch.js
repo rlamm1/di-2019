@@ -1,7 +1,7 @@
 
 function setup() {
   createCanvas(512, 256); // set the size of the canvas
-  frameRate(60) // redraw the screen 60 times per second
+  frameRate(10) // redraw the screen 60 times per second
   background(0) // fill the canvas with black pixels
 
   // set parameters that will affect our drawing commands below
@@ -17,10 +17,14 @@ function draw() {
 
   // pick random values to decide on location, size, and opacity of the next dot
   var x = random(width)
-  var y = randomGaussian(height/2, height/8)
+  //you give average & variability
+  var y = randomGaussian(height/2, height/4)
+  //(min, max)
   var r = random(3, 30)
+  //random opacity
   var c = color(255, random(100))
-
+  
+// var c = color(random(255), ramdom(255), random(255))
   // set the color & draw the dot
   fill(c)
   ellipse(x, y, r)

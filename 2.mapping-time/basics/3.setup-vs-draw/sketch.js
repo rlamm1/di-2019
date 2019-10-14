@@ -15,6 +15,8 @@ function draw() {
   // Set the background to black (and clear the screen in the process)
   background(0)
 
+//stroke
+//stroke
   // decrement the current length value
   length = length - 2
   if (length < 0) {

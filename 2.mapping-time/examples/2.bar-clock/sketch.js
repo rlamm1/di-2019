@@ -1,4 +1,4 @@
-var x = 20 // starting x position to draw
+var x = 10 // starting x position to draw
 var y = 20  // starting y position to draw
 var barHeight = 180 // height of each bar
 var maxWidth = 760 // maximum width of each bar (the actual width will always be ≤ this)
@@ -14,7 +14,7 @@ function setup() {
 
 //this gets called every frame (about 60 frames per second)
 function draw() {
-  background(255)
+  background(5)
   noStroke()
 
   // measure the current time & calculate the width in pixels of each bar

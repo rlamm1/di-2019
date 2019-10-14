@@ -19,9 +19,23 @@ function draw() {
 	text(now.min, x, top + spacing)
 
   fill(0)
+  //fill(255 * now.sec/60)
 	text(now.sec, x, top + 2*spacing)
+	//x position is using the current seconds
+	circle(width * now.sec/60,140,30)
+	
+//		circle(width * now.min/60, height* now.hour/24, 30)
+//smooth color
+// circle(width * now.progress.hour, height* now.hour/24, 30)
 
 
+//no fill()
+// stroke(0)
+// for (var i=0, i<now.hours; i++){
+//   circle(width/2,100, 20+ i*10)
+// circle(random(width), random(height), 40)
+  
+}
   push() // save the state of the canvas (including font & transformation settings)
 
     // make some state changes that will apply until we call pop()
