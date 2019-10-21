@@ -26,11 +26,7 @@ var radius= map(now.progress.day, 0, 1, 2, 100)
 //gray-scale value
 //varcircColor =color(map(now.sec, 0, 60, 0, 255))
 
-let from = color(218, 165, 32);
-let to = color(72, 61, 139);
-let circColor = lerpColor(from, to, now.sec/60);
-
-fill (circColor)
+========
 //circle (x, height/2, 40)
 
 //circle (stepwise, height*.33, 40)

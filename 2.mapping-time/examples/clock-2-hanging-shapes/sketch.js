@@ -12,7 +12,7 @@ function pointAt(cx, cy, angle, dist){
 }
 
 function setup() {
-  createCanvas(400, 800);
+  createCanvas(550, 550);
 }
 
 function draw() {
