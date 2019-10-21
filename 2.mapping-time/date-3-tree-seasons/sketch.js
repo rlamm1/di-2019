@@ -27,7 +27,7 @@ function draw() {
 
 function branch(depth) {
   var now = clock();
-  if (depth < 3) {
+  if (depth < 4) {
     
     line(0, 0, 0, -height / 10); // draw a line going up
     
