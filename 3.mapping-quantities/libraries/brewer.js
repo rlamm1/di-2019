@@ -226,7 +226,7 @@ Brewer = (function(){
                     console.error('Unknown palette name. Choose from:', Object.keys(_palettes))
                 }else if (bins!=Infinity && !_palettes[name][bins]){
                     var binrange = Object.keys(_palettes[name]);
-                    console.error('Invalid number of bins. Choose a number between %i and %i', binrange[0], binrange[binrange.length-1])
+                    console.error('Invalid number of bins. Choose a number between %s and %s', binrange[0], binrange[binrange.length-1])
                 }else if (min===undefined || max===undefined){
                     console.error('You must specify `min` and `max` values to define the color range (got min=%s, max=%s)', min, max)
                 }else{
@@ -363,7 +363,7 @@ Brewer = (function(){
                     console.error('Unknown palette name. Choose from:', Object.keys(_palettes))
                 }else if (bins!=Infinity && !_palettes[name][bins]){
                     var binrange = Object.keys(_palettes[name]);
-                    console.error('Invalid number of bins. Choose a number between %i and %i', binrange[0], binrange[binrange.length-1])
+                    console.error('Invalid number of bins. Choose a number between %s and %s', binrange[0], binrange[binrange.length-1])
                 }else if (min===undefined || max===undefined || mid===undefined){
                     console.error('You must specify `min`, `mid`, and `max` values to define the color range (got min=%s, mid=%s, max=%s)', min, mid, max)
                 }else{
