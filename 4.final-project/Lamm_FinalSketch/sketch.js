@@ -1,35 +1,13 @@
-//var table;
+var table;
 
 function preload(){
   table = loadTable('data/happydemocracy.csv', 'csv', 'header')
  
 }
-function setup(){
-  // Add a final argument of `SVG` to your createCanvas command
-  createCanvas(2500, 3600,SVG)
-  textSize(16)
 
-  var rowX = 100
-  var rowY = 60
-
-  for (var r=0; r<table.getRowCount(); r++){
-    var row = table.getRow(r)
-    var country = row.getString('country')
-    text(country, rowX + FACE_WIDTH, rowY)
-    drawFace(rowX, rowY, row)
-
-    rowY += ROW_HEIGHT
-    if (rowY > height-ROW_HEIGHT){
-      rowY = 60
-      rowX += COL_WIDTH
-
- save('my-sketch.svg')
-}
-}
-}
 var ROW_LEFT = 40
 var ROW_HEIGHT = 120
-var COL_WIDTH = 400
+var COL_WIDTH = 300
 
 var FACE_HEIGHT = 100
 var FACE_WIDTH = 60
@@ -42,10 +20,11 @@ function drawFace(x, y, row){
   translate(x, y)
 
   // start by drawing an outline for the head
-  stroke(255)
+  stroke(0)
   strokeWeight(2)
  // noFill()
-   fill(97,96,126,120)
+   
+   fill(250,211,132)
   rectMode(CENTER);
   // ellipse(0,0, FACE_WIDTH, FACE_HEIGHT)
  rect(0,0, FACE_WIDTH, FACE_HEIGHT)
@@ -71,9 +50,11 @@ function drawFace(x, y, row){
 function drawEyes(score){
   push()
   var eyeWidth = map(score, 0,10, 0,15)
-  stroke(255,252,213)
-  strokeWeight(1)
-  fill(255,255,255,180)
+   var numberOfShades = 10
+  var pal = Brewer.sequential('Blues', 9, 0, 10)
+  var eyeRadius = map(score, 0,10, 0,8)
+  noStroke();
+   fill(pal.colorForValue(score))
   polygon(-15, -10, eyeWidth, 3);
   polygon(15, -10, eyeWidth, 3);
  
@@ -81,11 +62,10 @@ pop();
 }
 function drawPupils(score){
   push()
-   var numberOfShades = 10
-  var pal = Brewer.sequential('Greys', 9, 0, 10)
+  
   var eyeRadius = map(score, 0,10, 0,8)
   noStroke()
-  fill(pal.colorForValue(score),160)
+  fill(255,255,255)
   ellipse(-10, -8, eyeRadius)
 ellipse(10,-8, eyeRadius)
 pop();
@@ -99,22 +79,22 @@ function drawEyebrows(score){
   strokeWeight(3)
   strokeCap(SQUARE);
   if (score <= 1){
-    stroke(219,108,44)
+    stroke(243,109,66)
   arc(-15, browTop, -7-browWidth, browTop-5, PI, 0,0)
    arc(15, browTop, 7+browWidth, browTop-5,PI, 0,0)
   
   }else if (score <= 2){
-   stroke(219,108,44)
+   stroke(243,109,66)
   line(-10, browTop, -10-browWidth, browTop)
   line(10, browTop, 10+browWidth, browTop-10)
   
   }else if (score <= 3){
-     stroke(219,108,44)
+     stroke(243,109,66)
   line(-10, browTop, -10-browWidth, browTop)
   line(10, browTop, 10+browWidth, browTop)
   
   }else if (score <= 4){
-  stroke(219,108,44)
+  stroke(243,109,66)
   line(-10, browTop, -10-browWidth, browTop-10)
   line(10, browTop, 10+browWidth, browTop-10)
   }
@@ -128,7 +108,7 @@ function drawNose(score){
   var noseWidth = 8
 
   noStroke()
-  fill(60)
+  fill(0)
   beginShape()
   vertex(-4, noseTop)
   vertex(4,noseTop)
@@ -147,7 +127,7 @@ function drawMouth(score, mouthTop){
   // var mouthWidth = 50
   
   var numberOfShades = 10
-  var pal = Brewer.sequential('Reds', 9, 0, 10)
+  var pal = Brewer.sequential('Oranges', 9, 0, 10)
   
   if (score > 4.8){
     var mouthWidth = map(score, 4.8, 10, 1, 50)
@@ -176,4 +156,35 @@ function drawMouth(score, mouthTop){
   }
   endShape(CLOSE);
 }
+
+function setup(){
+  createCanvas(2500, 3600, SVG)
+  textSize(16)
+
+  var rowX = 100
+  var rowY = 40
+
+  for (var r=0; r<table.getRowCount(); r++){
+  
+    angleMode(degrees);
+    var row = table.getRow(r)
+    var country = row.getString('country')
+  
+    text(country, rowX + FACE_WIDTH, rowY)
+  
+    drawFace(rowX, rowY, row)
+
+    rowY += ROW_HEIGHT
+    if (rowY > height-ROW_HEIGHT){
+      rowY = 40
+      rowX += COL_WIDTH
+      // save('mysketch1.svg')
+      // print("saved")
+     
+    
+    }
+    
+}
+}
+
 

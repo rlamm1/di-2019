@@ -60,5 +60,5 @@ function setup(){
     }
     x += colWidth
   }
-
+save('my-sketch.svg')
 }
